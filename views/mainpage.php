@@ -24,24 +24,29 @@ if (!isset($_SESSION['user_id'])) {
     <div class="container d-flex justify-content-center my-5 px-4 px-md-0">
         <div class="col-12 col-md-8 col-lg-6 mx-auto">
             <div class="row text-center">
-                <p class="display-5 fw-bold">Simple Blog System</p>
+                <p class="display-4 fw-bold">Simple Blog System</p>
                 <p>By Jeriel Sanao</p>
             </div>
             
             <!-- Show the logged-in user's username -->
-            <div class="row text-center mb-4">
+            <div class="row text-center">
                 <p class="fw-bold">Welcome, <?= htmlspecialchars($_SESSION['username']); ?>!</p>
             </div>
-            
+
+            <div class="row mt-2 mb-5">
+                <div class="col-6 text-end">
+                    <a href="account_page.php" class="btn btn-outline-warning">Account</a>
+                </div>
+                <div class="col-6 text-first">
+                    <a href="../handlers/logout-handler.php" class="btn btn-outline-danger">Logout</a>
+                </div>
+                
+            </div>
+
             <div class="row my-4">
                 <a href="add_blog.php" class="btn btn-outline-dark btn-sm">Write a blog</a>
             </div>
-
-            <!-- Logout button -->
-            <div class="row my-4 text-center">
-                <a href="../handlers/logout-handler.php" class="btn btn-outline-danger btn-sm">Logout</a>
-            </div>
-
+            
             <div class="row mt-5 text-center">
                 <p class="fw-bold">Contents</p>
             </div>
