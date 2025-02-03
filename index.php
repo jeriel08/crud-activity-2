@@ -1,3 +1,4 @@
+<?php include 'helpers/not_authenticated.php'; ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -17,9 +18,21 @@
                 </div>
                 <div class="row">
                     <form action="handlers/login-handler.php" method="POST" class="form">
-                        <div class="row mt-4 mb-5">
+                        <?php if (isset($_SESSION['errors'])): ?>
+                            <div class="alert alert-danger">
+                                <?php
+                                echo $_SESSION['errors'];
+                                unset($_SESSION['errors']);
+                                ?>
+                            </div>
+                        <?php endif; ?>
+                        <div class="row mt-4">
                             <label for="username">Username</label>
                             <input class="form-control mt-1" type="text" name="username" required placeholder="Enter your username" id="username">
+                        </div>
+                        <div class="row mt-4 mb-5">
+                            <label for="password">Password</label>
+                            <input class="form-control mt-1" type="password" name="password" required placeholder="Enter your password" id="password">
                         </div>
 
                         <div class="mt-3 d-flex flex-column align-items-center">

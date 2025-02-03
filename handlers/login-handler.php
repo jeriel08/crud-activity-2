@@ -7,32 +7,49 @@ try {
     if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         // Get the username from the form
         $username = $_POST['username'];
+        $password = $_POST['password'];
 
-        // Check if the username exists in the database
-        $stmt = $conn->prepare("SELECT * FROM users WHERE username = ?");
-        $stmt->bind_param("s", $username);
-        $stmt->execute();
-        $result = $stmt->get_result();
+        $user = verify_user($username, $password);
 
-        // If the username is found, create a session for the user
-        if ($result->num_rows > 0) {
-            // Fetch the user data
-            $user = $result->fetch_assoc();
+    if ($user) {
+      
+      $_SESSION['user_id'] = $user['id'];
 
-            // Store user information in session variables
-            $_SESSION['user_id'] = $user['id'];
-            $_SESSION['username'] = $user['username'];
+      // Generate a unique token
+      $token = bin2hex(random_bytes(32));
 
-            // Redirect the user to the main page after successful login
-            header("Location: ../views/mainpage.php");
-            echo ("User found!");
-            exit;
-        } else {
-            // If username does not exist, show an error
-            echo "Username not found";
-        }
+      // Store the token in the session
+      $_SESSION['access_token'] = $token;
+
+      header("Location: ../views/mainpage.php");
+      exit;
+    } else {
+      $_SESSION['errors'] = "Invalid username or password!";
+      header("Location: ../index.php");
+      exit;
     }
+  }
 } catch (\Exception $e) {
     echo "Error: " . $e->getMessage();
 }
+
+// Function to verify user credentials
+function verify_user($username, $password)
+{
+  global $conn;
+
+  $stmt = $conn->prepare("SELECT id, password FROM users WHERE username = ?");
+  $stmt->bind_param("s", $username);
+  $stmt->execute();
+  $result = $stmt->get_result();
+
+  if ($row = $result->fetch_assoc()) {
+    if (password_verify($password, $row['password'])) {
+      return $row; // Return user info
+    }
+  }
+  return false;
+}
+
+
 ?>

@@ -1,6 +1,7 @@
 <?php
 session_start();
 include '../database/database.php';
+include 'helpers/not_authenticated.php';
 
 try {
     if ($_SERVER['REQUEST_METHOD'] == 'POST') {
