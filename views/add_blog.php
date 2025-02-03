@@ -1,3 +1,14 @@
+<?php 
+session_start();
+
+// Check if the user is logged in
+if (!isset($_SESSION['user_id'])) {
+    // Redirect to login page if the user is not logged in
+    header("Location: ../views/login.php");
+    exit();
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,7 +17,7 @@
     <link href="../statics/style.css" rel="stylesheet">
     <link href="../statics/css/bootstrap.min.css" rel="stylesheet">
     <script src="../statics/js/bootstrap.min.js"></script>
-    <title> Jeriel Blog | Write Blog </title>
+    <title>Simple Blog System | Write Blog</title>
 </head>
 <body>
     <div class="container d-flex flex-column align-items-center mt-5"><!-- Main Content -->
@@ -20,9 +31,10 @@
                     <label for="title">Title</label>
                     <input type="text" class="form-control" name="title" required>
                 </div>
+                <!-- Set the logged-in username as the default value for the author -->
                 <div class="my-3">
                     <label for="author">Author</label>
-                    <input type="text" class="form-control" name="author" required>
+                    <input type="text" class="form-control" name="author" value="<?= htmlspecialchars($_SESSION['username']); ?>" readonly>
                 </div>
                 <div class="my-3">
                     <label>Content</label>
@@ -33,7 +45,7 @@
                 <div class="my-4">
                     <button type="submit" class="btn btn-outline-dark">Post Blog</button>
                     <br>
-                    <a href="../index.php" class="btn btn-outline-secondary mt-3">&larr; Back</a>
+                    <a href="mainpage.php" class="btn btn-outline-secondary mt-3">&larr; Back</a>
                 </div>
             </form>
         </div>

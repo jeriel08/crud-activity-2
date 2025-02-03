@@ -1,6 +1,9 @@
 <?php include '../database/database.php'; ?>
 
 <?php
+
+session_start();
+
 try {
     $id = $_GET['id'] ?? null;
 
@@ -8,7 +11,8 @@ try {
         die("Invalid post ID.");
     }
 
-    $stmt = $conn->prepare("SELECT * FROM posts WHERE id = ?");
+    // Fetch post along with the author's username by joining the posts table and users table
+    $stmt = $conn->prepare("SELECT posts.*, users.username FROM posts JOIN users ON posts.author_id = users.id WHERE posts.id = ?");
     $stmt->bind_param("i", $id);
     $stmt->execute();
     $result = $stmt->get_result();
@@ -16,7 +20,7 @@ try {
     if ($result && $result->num_rows > 0) {
         $post = $result->fetch_assoc();
     } else {
-        die("Post not found");
+        die("Post not found.");
     }
     $stmt->close();
 } catch (Exception $e) {
@@ -40,7 +44,7 @@ try {
             <!-- Blog Title -->
             <div class="text-center">
                 <p class="display-5 fw-bold"><?= htmlspecialchars($post['title']); ?></p>
-                <p class="small">Written By <?= htmlspecialchars($post['author']); ?></p>
+                <p class="small">Written By <?= htmlspecialchars($post['username']); ?></p> <!-- Display the author's name -->
             </div>
 
             <!-- Blog Content -->
@@ -48,20 +52,20 @@ try {
                 <p><?= nl2br(htmlspecialchars($post['content'])); ?></p>
             </div>
 
-            <!-- Buttons Section -->
+            <!-- Buttons Section (optional) -->
             <div class="d-flex flex-column">
-                <div class="d-flex gap-2">
-                    <a href="edit_blog.php?id=<?= $post['id']; ?>" class="btn btn-warning">Edit</a>
-                    <a href="../handlers/delete-blog-handler.php?id=<?=$post['id']; ?>" class="btn btn-danger" onclick="return confirm('Are you sure you want to delete this post?');">Delete</a>
-                </div>
+                <!-- Add Edit and Delete buttons only for logged-in users or admins (adjust logic as needed) -->
+                <?php if (isset($_SESSION['user_id']) && $_SESSION['user_id'] == $post['author_id']): ?>
+                    <div class="d-flex gap-2">
+                        <a href="edit_blog.php?id=<?= $post['id']; ?>" class="btn btn-warning">Edit</a>
+                        <a href="../handlers/delete-blog-handler.php?id=<?= $post['id']; ?>" class="btn btn-danger" onclick="return confirm('Are you sure you want to delete this post?');">Delete</a>
+                    </div>
+                <?php endif; ?>
                 <div>
-                    <a href="../index.php" class="btn btn-outline-secondary mt-3">&larr; Back</a>
+                    <a href="mainpage.php" class="btn btn-outline-secondary mt-3">&larr; Back</a>
                 </div>
-                
             </div>
         </div>
     </div>
 </body>
-
-
 </html>

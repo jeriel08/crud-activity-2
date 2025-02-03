@@ -1,31 +1,27 @@
-<?php include '../database/database.php' ?>
-
 <?php
+include '../database/database.php';
 
-try{
-    
+try {
+    $id = $_GET['id'];
 
-    $id = $_GET['id']; 
-  
-    $stmt = $conn->prepare("SELECT * FROM posts WHERE id = ?");
+    // Fetch the post along with the author's name by joining with the users table
+    $stmt = $conn->prepare("SELECT p.*, u.username AS author FROM posts p
+                            JOIN users u ON p.author_id = u.id
+                            WHERE p.id = ?");
     $stmt->bind_param("i", $id);
     $stmt->execute();
     $result = $stmt->get_result();
-  
+
     if ($result && $result->num_rows > 0) {
         $post = $result->fetch_assoc();
     } else {
         die("Post not found");
     }
     $stmt->close();
-  
-  }catch(\Exception $e){
-    echo "Error: ".$e;
-  }
-  
-  
-  
-  ?>
+} catch (\Exception $e) {
+    echo "Error: " . $e;
+}
+?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -71,10 +67,9 @@ try{
             </div>
             <!-- Buttons (Save and Back) -->
              <div class="d-flex flex-column my-3">
-                 <a href="../index.php" class="btn btn-outline-secondary w-100 mt-2">&larr; Back</a>
+                 <a href="mainpage.php" class="btn btn-outline-secondary w-100 mt-2">&larr; Back</a>
              </div>
-        </div>
+        </div>  
     </div>
 </body>
-
 </html>

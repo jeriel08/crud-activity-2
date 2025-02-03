@@ -1,5 +1,4 @@
 <?php
-
   include "../database/database.php";
 
   try
@@ -13,7 +12,7 @@
 
       if($stmt->execute())
       {
-        header("Location: ../index.php");
+        header("Location: ../views/mainpage.php");
         exit;
       }
       else
