@@ -1,5 +1,4 @@
-<?php 
-session_start(); // Start the session to check if the user is logged in
+<?php
 include '../database/database.php';
 include '../helpers/authenticated.php';
 

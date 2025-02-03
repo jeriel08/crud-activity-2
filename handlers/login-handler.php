@@ -14,6 +14,7 @@ try {
     if ($user) {
       
       $_SESSION['user_id'] = $user['id'];
+      $_SESSION['username'] = $user['username'];
 
       // Generate a unique token
       $token = bin2hex(random_bytes(32));
@@ -38,7 +39,7 @@ function verify_user($username, $password)
 {
   global $conn;
 
-  $stmt = $conn->prepare("SELECT id, password FROM users WHERE username = ?");
+  $stmt = $conn->prepare("SELECT id, username, password FROM users WHERE username = ?");
   $stmt->bind_param("s", $username);
   $stmt->execute();
   $result = $stmt->get_result();
