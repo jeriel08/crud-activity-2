@@ -28,10 +28,13 @@ try {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../statics/css/bootstrap.min.css">
+    <!-- Stylesheets --> 
     <link rel="stylesheet" href="../statics/style.css">
-    <script src="statics/script.js"></script>
-    <script src="../statics/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="../statics/css/bootstrap.min.css">
+    
+    <!-- Boxicons CSS -->
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    
     <title>Jeriel Blog | <?= htmlspecialchars($post['title']); ?> </title>
 </head>
 <body>
@@ -60,16 +63,23 @@ try {
                     </div>
                     
                     <div class="my-3">
-                        <button type="submit" class="btn btn-outline-dark w-100">Save Post</button>
+                        <button type="submit" class="btn custom-btn btn-outline-dark btn-sm d-flex align-items-center justify-content-center gap-2">
+                            <i class='bx bx-save fs-4' ></i>
+                            <span>Save Post</span>
+                        </button>
                     </div>
 
                 </form>
             </div>
             <!-- Buttons (Save and Back) -->
-             <div class="d-flex flex-column my-3">
-                 <a href="mainpage.php" class="btn btn-outline-secondary w-100 mt-2">&larr; Back</a>
+             <div class="mt-2">
+                 <a href="mainpage.php" class="btn btn-outline-secondary mt-2">&larr; Back</a>
              </div>
         </div>  
     </div>
+
+    <!-- Scripts -->
+    <script src="statics/script.js"></script>
+    <script src="../statics/js/bootstrap.min.js"></script>
 </body>
 </html>
