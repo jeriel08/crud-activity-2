@@ -40,9 +40,12 @@ if (!isset($_SESSION['user_id'])) {
 
             <div class="row mt-2 mb-5">
                 <div class="col-6 text-end">
-                    <a href="account_page.php" class="btn btn-outline-warning py-2 px-4">Account</a>
+                    <a href="account_page.php" class="btn btn-outline-warning d-flex align-items-center justify-content-center gap-2">
+                        <i class="bx bx-user-circle fs-4"></i>
+                        <span>Account</span>
+                    </a>
                 </div>
-                <div class="col-3 text-first">
+                <div class="col-6 text-first">
                     <a href="../handlers/logout-handler.php" class="btn btn-outline-danger d-flex align-items-center justify-content-center gap-2">
                         <i class="bx bx-log-out fs-3"></i>
                         <span>Logout</span>

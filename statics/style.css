@@ -18,58 +18,77 @@
 
 /* mainpage.php */
 
+/* Account Button */
+.btn.btn-outline-warning {
+  border-color: #ffc107 !important;
+  color: #ffc107 !important;
+  background-color: transparent !important;
+  padding: 0.5rem 1rem !important;
+  font-weight: 500 !important;
+  border-radius: 0.375rem !important;
+  transition: all 0.3s ease !important;
+}
+
+/* Hover styles */
+.btn.btn-outline-warning:hover {
+  background-color: #ffc107 !important;
+  color: #ffffff !important;
+  border-color: #ffc107 !important;
+}
+
+.btn.btn-outline-warning:hover span,
+.btn.btn-outline-warning:hover i {
+  color: #ffffff !important;
+}
+
 /* Write a blog button */
 .btn.custom-btn.btn-outline-dark {
-  border-color: #343a40 !important; /* Dark gray border */
-  color: #343a40 !important; /* Dark gray text */
-  background-color: transparent !important; /* No background */
-  padding: 0.5rem 1.5rem !important; /* Matches your padding */
-  font-weight: 500 !important; /* Slightly bold */
-  border-radius: 0.375rem !important; /* Softer corners */
-  transition: all 0.3s ease !important; /* Smooth transition */
+  border-color: #343a40 !important;
+  color: #343a40 !important;
+  background-color: transparent !important;
+  padding: 0.5rem 1.5rem !important;
+  font-weight: 500 !important;
+  border-radius: 0.375rem !important;
   font-size: 1em !important;
 }
 
 .btn.custom-btn.btn-outline-dark:hover {
-  background-color: #343a40 !important; /* Dark gray fill */
-  color: #ffffff !important; /* White text, explicit */
-  border-color: #343a40 !important; /* Consistent border */
+  background-color: #343a40 !important;
+  color: #ffffff !important;
+  border-color: #343a40 !important;
 }
 
-/* Ensure nested elements (like <span>) also change color */
 .btn.custom-btn.btn-outline-dark:hover span,
 .btn.custom-btn.btn-outline-dark:hover i {
-  color: #ffffff !important; /* Force icon and span text to white */
+  color: #ffffff !important;
 }
 
 /* Logout Button */
 .btn.btn-outline-danger {
-  border-color: #dc3545 !important; /* Red border (Bootstrap default) */
-  color: #dc3545 !important; /* Red text */
-  background-color: transparent !important; /* No background */
-  font-weight: 500 !important; /* Slightly bold */
-  border-radius: 0.375rem !important; /* Softer corners */
-  transition: all 0.3s ease !important; /* Smooth transition */
+  border-color: #dc3545 !important;
+  color: #dc3545 !important;
+  background-color: transparent !important;
+  font-weight: 500 !important;
+  border-radius: 0.375rem !important;
+  transition: all 0.3s ease !important;
 }
 
-/* Hover styles */
 .btn.btn-outline-danger:hover {
-  background-color: #dc3545 !important; /* Red background on hover */
-  color: #ffffff !important; /* White text on hover */
-  border-color: #dc3545 !important; /* Consistent border */
+  background-color: #dc3545 !important;
+  color: #ffffff !important;
+  border-color: #dc3545 !important;
 }
 
-/* Ensure nested elements (span and icon) also change color */
 .btn.btn-outline-danger:hover span,
 .btn.btn-outline-danger:hover i {
-  color: #ffffff !important; /* Force white text and icon */
+  color: #ffffff !important;
 }
 
 .btn.btn-warning {
-  border-color: #ffc107 !important; /* Yellow border (Bootstrap default) */
-  color: #212529 !important; /* Dark text for contrast */
-  background-color: #ffc107 !important; /* Yellow background */
-  padding: 0.375rem 0.75rem !important; /* Smaller padding for btn-sm */
+  border-color: #ffc107 !important;
+  color: #212529 !important;
+  background-color: #ffc107 !important;
+  padding: 0.375rem 0.75rem !important;
   font-weight: 500 !important;
   border-radius: 0.375rem !important;
   transition: all 0.3s ease !important;
@@ -77,43 +96,40 @@
 
 /* View Button */
 .btn.btn-warning:hover {
-  background-color: #e0a800 !important; /* Darker yellow on hover */
-  color: #ffffff !important; /* White text on hover */
+  background-color: #e0a800 !important;
+  color: #ffffff !important;
   border-color: #e0a800 !important;
 }
 
 .btn.btn-warning:hover span,
 .btn.btn-warning:hover i {
-  color: #ffffff !important; /* Ensure text and icon turn white */
+  color: #ffffff !important;
 }
 
 /* Delete Button */
 .btn.btn-danger {
-  background-color: #dc3545 !important; /* Bootstrap danger red */
-  border-color: #dc3545 !important; /* Matching border */
-  color: #ffffff !important; /* White text */
-  padding: 0.5rem 1rem !important; /* Consistent padding */
-  font-weight: 500 !important; /* Slightly bold */
-  border-radius: 0.375rem !important; /* Softer corners */
-  transition: all 0.3s ease !important; /* Smooth hover transition */
+  background-color: #dc3545 !important;
+  border-color: #dc3545 !important;
+  color: #ffffff !important;
+  padding: 0.5rem 1rem !important;
+  font-weight: 500 !important;
+  border-radius: 0.375rem !important;
+  transition: all 0.3s ease !important;
 }
 
-/* Hover styles */
 .btn.btn-danger:hover {
-  background-color: #c82333 !important; /* Darker red on hover */
+  background-color: #c82333 !important;
   border-color: #c82333 !important;
-  color: #ffffff !important; /* Ensure text stays white */
+  color: #ffffff !important;
 }
 
-/* Ensure nested elements stay white on hover */
 .btn.btn-danger span,
 .btn.btn-danger i {
-  color: #ffffff !important; /* White text and icon always */
+  color: #ffffff !important;
 }
 
-/* Optional: Active/clicked state */
 .btn.btn-danger:active {
-  background-color: #bd2130 !important; /* Even darker red */
+  background-color: #bd2130 !important;
   border-color: #bd2130 !important;
   color: #ffffff !important;
 }
