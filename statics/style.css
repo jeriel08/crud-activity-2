@@ -27,6 +27,7 @@
   font-weight: 500 !important; /* Slightly bold */
   border-radius: 0.375rem !important; /* Softer corners */
   transition: all 0.3s ease !important; /* Smooth transition */
+  font-size: 1em !important;
 }
 
 .btn.custom-btn.btn-outline-dark:hover {

@@ -16,14 +16,12 @@ if (!isset($_SESSION['user_id'])) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
-    <!-- Stylesheets -->
-     
+    <!-- Stylesheets --> 
     <link rel="stylesheet" href="../statics/style.css">
-    <!-- Boxicons CSS -->
-    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-    
     <link rel="stylesheet" href="../statics/css/bootstrap.min.css">
     
+    <!-- Boxicons CSS -->
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     
     <title>Welcome | Simple Blog System</title>
 </head>

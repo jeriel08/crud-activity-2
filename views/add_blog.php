@@ -15,8 +15,15 @@ if (!isset($_SESSION['user_id'])) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="../statics/style.css" rel="stylesheet">
-    <link href="../statics/css/bootstrap.min.css" rel="stylesheet">
-    <script src="../statics/js/bootstrap.min.js"></script>
+
+    <!-- Stylesheets --> 
+    <link rel="stylesheet" href="../statics/style.css">
+    <link rel="stylesheet" href="../statics/css/bootstrap.min.css">
+    
+    <!-- Boxicons CSS -->
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    
+    
     <title>Simple Blog System | Write Blog</title>
 </head>
 <body>
@@ -43,13 +50,19 @@ if (!isset($_SESSION['user_id'])) {
 
                 <!-- Buttons: Post & Back -->
                 <div class="my-4">
-                    <button type="submit" class="btn btn-outline-dark">Post Blog</button>
+                    <button type="submit" class="btn custom-btn btn-outline-dark btn-sm d-flex align-items-center justify-content-center gap-2">
+                        <i class="bx bx-upload fs-4"></i>
+                        <span>Post Blog</span>
+                    </button>
                     <br>
                     <a href="mainpage.php" class="btn btn-outline-secondary mt-3">&larr; Back</a>
                 </div>
             </form>
         </div>
     </div>
+
+    <!-- Scripts -->
+    <script src="../statics/js/bootstrap.min.js"></script>
 </body>
 
 </html>
