@@ -15,10 +15,17 @@ if (!isset($_SESSION['user_id'])) {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../statics/css/bootstrap.min.css">
+    
+    <!-- Stylesheets -->
+     
     <link rel="stylesheet" href="../statics/style.css">
-    <script src="../statics/js/bootstrap.min.js"></script>
-    <title>Simple Blog System | Welcome</title>
+    <!-- Boxicons CSS -->
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    
+    <link rel="stylesheet" href="../statics/css/bootstrap.min.css">
+    
+    
+    <title>Welcome | Simple Blog System</title>
 </head>
 <body>
     <div class="container d-flex justify-content-center my-5 px-4 px-md-0">
@@ -35,20 +42,31 @@ if (!isset($_SESSION['user_id'])) {
 
             <div class="row mt-2 mb-5">
                 <div class="col-6 text-end">
-                    <a href="account_page.php" class="btn btn-outline-warning">Account</a>
+                    <a href="account_page.php" class="btn btn-outline-warning py-2 px-4">Account</a>
                 </div>
-                <div class="col-6 text-first">
-                    <a href="../handlers/logout-handler.php" class="btn btn-outline-danger">Logout</a>
+                <div class="col-3 text-first">
+                    <a href="../handlers/logout-handler.php" class="btn btn-outline-danger d-flex align-items-center justify-content-center gap-2">
+                        <i class="bx bx-log-out fs-3"></i>
+                        <span>Logout</span>
+                    </a>
                 </div>
                 
             </div>
 
             <div class="row my-4">
-                <a href="add_blog.php" class="btn btn-outline-dark btn-sm">Write a blog</a>
+                <div class="col">
+                <a href="add_blog.php" class="btn custom-btn btn-outline-dark btn-sm d-flex align-items-center justify-content-center gap-2">
+    <i class="bx bx-book-add fs-3"></i>
+    <span>Write a blog</span>
+</a>
+                </div>
             </div>
             
-            <div class="row mt-5 text-center">
-                <p class="fw-bold">Contents</p>
+            <div class="row mt-5 text-center ">
+                <p class="fw-bold d-flex align-items-center justify-content-center gap-2">
+                    <i class='bx bx-book-content fs-3' ></i>
+                    Contents
+                </p>
             </div>
 
             <?php
@@ -71,7 +89,10 @@ if (!isset($_SESSION['user_id'])) {
                             </span>
                         </div>
                         <div class="row mt-3 mb-2 text-center">
-                            <a href="view_blog.php?id=<?=$row['id'];?>" class="btn btn-sm btn-warning">View</a>
+                            <a href="view_blog.php?id=<?=$row['id'];?>" class="btn btn-sm btn-warning d-flex align-items-center justify-content-center gap-2">
+                                <i class='bx bx-book-open' ></i>
+                                <span>View</span>
+                            </a>
                         </div>
                     </div>
                 <?php endwhile; ?>
@@ -84,5 +105,8 @@ if (!isset($_SESSION['user_id'])) {
             <?php endif; ?>
         </div>
     </div>
+
+    <!-- Scripts -->
+    <script src="../statics/js/bootstrap.js"></script>
 </body>
 </html>

@@ -4,9 +4,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="statics/style.css" >
+    <!-- Stylesheets -->
     <link rel="stylesheet" href="statics/css/bootstrap.min.css" >
-    <script src="statics/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="statics/style.css" >
+    <!-- Boxicons CSS -->
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    
     <title>Simple Blog System | Login</title>
 </head>
 <body>
@@ -28,11 +31,22 @@
                         <?php endif; ?>
                         <div class="row mt-4">
                             <label for="username">Username</label>
-                            <input class="form-control mt-1" type="text" name="username" required placeholder="Enter your username" id="username">
+                            <div class="input-group mt-1">
+                                <span class="input-group-text">
+                                    <i class='bx bx-user-circle fs-4'></i>
+                                </span>
+                                <input class="form-control" type="text" name="username" required placeholder="Enter your username" id="username">
+                            </div>
                         </div>
                         <div class="row mt-4 mb-5">
                             <label for="password">Password</label>
-                            <input class="form-control mt-1" type="password" name="password" required placeholder="Enter your password" id="password">
+                            <div class="input-group mt-1">
+                                <span class="input-group-text">
+                                    <i class='bx bx-lock  fs-5'></i>
+                                </span>
+                                <input class="form-control" type="password" name="password" required placeholder="Enter your password" id="password">
+
+                            </div>
                         </div>
 
                         <div class="mt-3 d-flex flex-column align-items-center">
@@ -45,5 +59,7 @@
         </div>
     </div>
 
+    <!-- Scripts -->
+    <script src="statics/js/bootstrap.min.js"></script>
 </body>
 </html>
