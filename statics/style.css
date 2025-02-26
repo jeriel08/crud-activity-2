@@ -86,3 +86,34 @@
 .btn.btn-warning:hover i {
   color: #ffffff !important; /* Ensure text and icon turn white */
 }
+
+/* Delete Button */
+.btn.btn-danger {
+  background-color: #dc3545 !important; /* Bootstrap danger red */
+  border-color: #dc3545 !important; /* Matching border */
+  color: #ffffff !important; /* White text */
+  padding: 0.5rem 1rem !important; /* Consistent padding */
+  font-weight: 500 !important; /* Slightly bold */
+  border-radius: 0.375rem !important; /* Softer corners */
+  transition: all 0.3s ease !important; /* Smooth hover transition */
+}
+
+/* Hover styles */
+.btn.btn-danger:hover {
+  background-color: #c82333 !important; /* Darker red on hover */
+  border-color: #c82333 !important;
+  color: #ffffff !important; /* Ensure text stays white */
+}
+
+/* Ensure nested elements stay white on hover */
+.btn.btn-danger span,
+.btn.btn-danger i {
+  color: #ffffff !important; /* White text and icon always */
+}
+
+/* Optional: Active/clicked state */
+.btn.btn-danger:active {
+  background-color: #bd2130 !important; /* Even darker red */
+  border-color: #bd2130 !important;
+  color: #ffffff !important;
+}

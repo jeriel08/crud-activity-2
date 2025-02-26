@@ -33,9 +33,14 @@ try {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../statics/css/bootstrap.min.css">
+
+    <!-- Stylesheets --> 
     <link rel="stylesheet" href="../statics/style.css">
-    <script src="../statics/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="../statics/css/bootstrap.min.css">
+    
+    <!-- Boxicons CSS -->
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    
     <title>Jeriel Blog | <?= htmlspecialchars($post['title']); ?></title>
 </head>
 <body>
@@ -57,8 +62,14 @@ try {
                 <!-- Add Edit and Delete buttons only for logged-in users or admins (adjust logic as needed) -->
                 <?php if (isset($_SESSION['user_id']) && $_SESSION['user_id'] == $post['author_id']): ?>
                     <div class="d-flex gap-2">
-                        <a href="edit_blog.php?id=<?= $post['id']; ?>" class="btn btn-warning">Edit</a>
-                        <a href="../handlers/delete-blog-handler.php?id=<?= $post['id']; ?>" class="btn btn-danger" onclick="return confirm('Are you sure you want to delete this post?');">Delete</a>
+                        <a href="edit_blog.php?id=<?= $post['id']; ?>" class="btn btn-warning d-flex justify-content-center align-items-center gap-2">
+                            <i class='bx bx-edit fs-5' ></i>
+                            <span>Edit</span>
+                        </a>
+                        <a href="../handlers/delete-blog-handler.php?id=<?= $post['id']; ?>" class="btn btn-danger d-flex justify-content-center align-items-center gap-2" onclick="return confirm('Are you sure you want to delete this post?');">
+                            <i class='bx bx-trash-alt' ></i>
+                            <span>Delete</span>
+                        </a>
                     </div>
                 <?php endif; ?>
                 <div>
@@ -67,5 +78,8 @@ try {
             </div>
         </div>
     </div>
+
+    <!-- Scripts -->
+    <script src="../statics/js/bootstrap.min.js"></script>
 </body>
 </html>
