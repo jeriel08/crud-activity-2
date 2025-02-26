@@ -54,9 +54,9 @@ if (!isset($_SESSION['user_id'])) {
             <div class="row my-4">
                 <div class="col">
                 <a href="add_blog.php" class="btn custom-btn btn-outline-dark btn-sm d-flex align-items-center justify-content-center gap-2">
-    <i class="bx bx-book-add fs-3"></i>
-    <span>Write a blog</span>
-</a>
+                    <i class="bx bx-book-add fs-3"></i>
+                    <span>Write a blog</span>
+                </a>
                 </div>
             </div>
             

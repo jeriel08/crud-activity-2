@@ -32,10 +32,15 @@ try {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../statics/css/bootstrap.min.css">
+    <!-- Stylesheets --> 
     <link rel="stylesheet" href="../statics/style.css">
-    <script src="../statics/js/bootstrap.min.js"></script>
-    <title>Simple Blog System | Account Settings</title>
+    <link rel="stylesheet" href="../statics/css/bootstrap.min.css">
+    
+    <!-- Boxicons CSS -->
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+
+    
+    <title>Account Settings | Simple Blog System</title>
 </head>
 <body>
     <div class="container">
@@ -48,7 +53,7 @@ try {
                     <!-- Account Information Form -->
                     <div class="col-12 col-md-6 mb-4">
                         <div class="card p-4">
-                            <h4 class="text-center fw-bold">Update Account</h4>
+                            <h4 class="text-center fw-bold mb-4">Update Account</h4>
                             <form action="../handlers/update-account-handler.php" method="POST">
                                 <?php if (isset($_SESSION['errors'])): ?>
                                     <div class="alert alert-danger">
@@ -75,20 +80,23 @@ try {
                                         <input class="form-control mt-1" type="text" name="lname" required placeholder="Last Name" value="<?= htmlspecialchars($user['lname']) ?>">
                                     </div>
                                 </div>
-                                <div class="mt-2">
+                                <div class="mt-3">
                                     <label for="username">Username</label>
                                     <input class="form-control mt-1" type="text" name="username" required placeholder="Enter your username" value="<?= htmlspecialchars($user['username']) ?>">
                                 </div>
-                                <div class="mt-2">
+                                <div class="mt-3">
                                     <label for="password">Password</label>
                                     <input class="form-control mt-1" type="password" name="password" required placeholder="Enter your password">
                                 </div>
-                                <div class="mt-2">
+                                <div class="mt-3">
                                     <label for="confirm_password">Confirm Password</label>
                                     <input class="form-control mt-1" type="password" name="confirm_password" required placeholder="Confirm password">
                                 </div>
-                                <div class="mt-3 d-flex flex-column align-items-center">
-                                    <button class="btn btn-outline-dark w-100 py-2" type="submit">Update</button>
+                                <div class="mt-4 d-flex flex-column align-items-center">
+                                    <button class="btn custom-btn btn-outline-dark btn-sm d-flex align-items-center justify-content-center gap-2" type="submit"> 
+                                        <i class='bx bx-save fs-4' ></i> 
+                                        Update
+                                    </button>
                                     <a href="../views/mainpage.php" class="mt-3" style="text-decoration: none;"><small>Go back</small></a>
                                 </div>
                             </form>
@@ -98,22 +106,24 @@ try {
                     <!-- Change Password Form -->
                     <div class="col-12 col-md-6">
                         <div class="card p-4">
-                            <h4 class="text-center fw-bold">Change Password</h4>
+                            <h4 class="text-center fw-bold mb-4">Change Password</h4>
                             <form action="../handlers/change-password-handler.php" method="POST">
                                 <div class="mt-2">
                                     <label for="old_password">Old Password</label>
                                     <input class="form-control mt-1" type="password" name="old_password" required placeholder="Enter your old password">
                                 </div>
-                                <div class="mt-2">
+                                <div class="mt-3">
                                     <label for="password">New Password</label>
                                     <input class="form-control mt-1" type="password" name="password" required placeholder="Enter new password">
                                 </div>
-                                <div class="mt-2">
+                                <div class="mt-3">
                                     <label for="confirm_password">Confirm Password</label>
                                     <input class="form-control mt-1" type="password" name="confirm_password" required placeholder="Confirm password">
                                 </div>
-                                <div class="mt-3 d-flex flex-column align-items-center">
-                                    <button class="btn btn-outline-dark w-100 py-2" type="submit">Change Password</button>
+                                <div class="mt-4 d-flex flex-column align-items-center">
+                                    <button class="btn custom-btn btn-outline-dark btn-sm d-flex align-items-center justify-content-center gap-2" type="submit">
+                                        Change Password
+                                    </button>
                                 </div>
                             </form>
                         </div>
@@ -122,6 +132,9 @@ try {
             </div>
         </div>
     </div>
+
+    <!-- Scripts -->
+    <script src="../statics/js/bootstrap.min.js"></script>
 </body>
 
 </html>
