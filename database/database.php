@@ -13,7 +13,6 @@ try{
 
   if($conn->connect_error){
     die("Database connection unsuccessful". $conn->connect_error);
-    return;
   }
 
 
